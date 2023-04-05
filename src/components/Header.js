@@ -1,6 +1,6 @@
-import { Navbar, NavItem, Collapse, NavbarToggler, Nav, NavLink, NavbarBrand} from 'reactstrap'; 
+import { Navbar, NavItem, Collapse, NavbarToggler, Nav, NavbarBrand} from 'reactstrap'; 
 import { useState } from 'react';
-//import { NavLink } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import logo  from '../assets/logo.png'
 import '../../src/App.css'
 
@@ -11,21 +11,23 @@ const Header = () => {
 
     return (
     <>
-       <Navbar color='light' light role={navigator} expand='md'>
+       <Navbar color='light' sticky='top' light role={navigator} expand='md'>
         <NavbarBrand className='p-0'>
-            <img src={logo} width='400px' alt='website logo: cosmonaut cafe' className='float-start'/>
+            <NavLink to='/'>
+                <img src={logo} width='300px' className='mb-4' alt='website logo: cosmonaut cafe'/>
+            </NavLink>
         </NavbarBrand> 
         <NavbarToggler className='ms-auto' onClick={() => setNavbarOpen(!navOpen)}/> 
             <Collapse isOpen={navOpen} navbar> 
                 <Nav navbar className='ms-auto'>
                     <NavItem>
-                        <NavLink className='text-dark'>About</NavLink>
+                        <NavLink className='nav-link customN' to='/about' >About</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='text-dark'>Inventory</NavLink>
+                        <NavLink className='nav-link customN' to='/inventory' >Inventory</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='text-dark'>Login</NavLink>
+                        <NavLink className='nav-link customN' to='/contact' >Contact</NavLink>
                     </NavItem>
                 </Nav>
             </Collapse> 

@@ -1,3 +1,54 @@
-.header {
-  font-size: 40px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+
+.navbar {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.customN::after {
+  content: '';
+	display: block;
+	margin: auto;
+	height: 3px;
+	width: 0px;
+	background: transparent;
+	transition: width .5s ease, background-color .5s ease;
+}
+
+.customN:hover:after {
+  width: 100%;
+  background: black;
+}
+
+.nav-link:hover {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
+}
+
+
+@media only screen and (min-width: 992px) {
+  .navbar .navbar-nav .nav-item .nav-link {
+    padding: 0 0.5em;
+  }
+  .navbar .navbar-nav .nav-item:not(:last-child) .nav-link {
+    border-right: 2px solid #000000;
+  }
+}
+
+
+/*Homepage Header*/ 
+
+.homeHeader {
+    background-image: url('./assets/mars.jpg');
+    min-height: 610px;
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+} 
+
+.homeH1 {
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 0.3em;
+  font-size: 50px;
+  color: whitesmoke;
 }
